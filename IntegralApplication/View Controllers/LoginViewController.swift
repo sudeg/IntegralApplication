@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+   
     @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController {
     func setUpElements() {
         
         // Hide the error label
-        //errorLabel.alpha = 0
+        errorLabel.alpha = 0
         
         // Style the elements
         Utilities.styleTextField(emailTextField)
@@ -53,13 +54,13 @@ class LoginViewController: UIViewController {
         // Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
-          /*  if error != nil {
+            if error != nil {
                 // Couldn't sign in
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
             }
             else {
-                */
+                
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
                 
                 self.view.window?.rootViewController = homeViewController
@@ -67,5 +68,7 @@ class LoginViewController: UIViewController {
            // }
         }
     }
+    
+}
     
 }

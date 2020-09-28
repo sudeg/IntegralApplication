@@ -8,6 +8,20 @@
 
 import Foundation
 
+
+//Firebase Headers
+
+public let kBRANDS_PATH = "Brands"
+public let kPRODUCTS_PATH = "Products"
+public let kBASKET_PATH = "Basket"
+
+//Brands
+
+public let kNAME = "name"
+public let kIMAGENAME = "imageName"
+public let kOBJECTID = "objectId"
+
+
 struct Constants {
     
     struct Storyboard {
